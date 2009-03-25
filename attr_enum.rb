@@ -1,37 +1,33 @@
 class Module
   # A macro to define an enumeration variable
   # 
-  # class Muppet
-  #   attr_enum :charachter, %w( fozzy )
+  # class Card
+  #   attr_enum :suit, %w( clubs hearts diamonds spades )
   # end
-  # m = Muppet.new
-  # m.charachter = 'fozzy'
-  # m.charachter
-  # => 'fozzy'
-  # m.charachter = 'dumbo' 
-  # => AttrEnumException, Muppet charachter must be one of [fozzy]
+  # c = Card.new
+  # c.suit = 'clubs'
+  # c.suit
+  # => 'clubs'
+  # m.suit = 'jack' 
+  # => EnumeratedTypeError, Card.suit must be one of [clubs, hearts, diamonds, spades]
   def attr_enum(name, types)
     attr_reader name
     
     class_eval do
+      # Create a class constant
       const_set :"#{name.to_s.upcase}_TYPES", types
       
       define_method(:"#{name}=") do |type|
+        # Add type constraint to setter method
         if self.class.const_get(:"#{name.to_s.upcase}_TYPES").include?(type)
           instance_variable_set :"@#{name}", type
         else
-          raise Exception, 'Invalid type'
+          raise EnumeratedTypeError, "Invalid type; must be one of #{types}"
         end
       end
     end
   end
 end
 
-class Foo; attr_enum :bar, %w( baz boing ) end
-puts Foo::BAR_TYPES.inspect
-
-foo = Foo.new
-foo.bar = 'boing'
-puts foo.bar
-foo.bar = 'bag'
-puts foo.bar
+class EnumeratedTypeError < StandardError
+end
