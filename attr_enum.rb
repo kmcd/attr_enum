@@ -22,7 +22,7 @@ class Module
         if self.class.const_get(:"#{name.to_s.upcase}_TYPES").include?(type)
           instance_variable_set :"@#{name}", type
         else
-          raise EnumeratedTypeError, "Invalid type; must be one of #{types}"
+          raise EnumeratedTypeError, "Invalid type; must be one of #{types.join(', ')}."
         end
       end
     end

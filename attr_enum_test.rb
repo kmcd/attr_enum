@@ -33,9 +33,7 @@ class EnumeratedTypeTest < Test::Unit::TestCase
   end
   
   def test_should_have_type_constraint_on_setter
-    error_message = "Invalid type; must be one of #{SUITS}"
-    assert_raise(EnumeratedTypeError, error_message) do
-      @card.suit = 'spadez'
-    end
+    error = assert_raise(EnumeratedTypeError) { @card.suit = 'spadez' }
+    assert_match /Invalid type; must be one of #{SUITS.join ', ' }\./, error.message
   end
 end
