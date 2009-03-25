@@ -9,7 +9,7 @@ class Module
   # c.suit
   # => 'clubs'
   # m.suit = 'jack' 
-  # => EnumeratedTypeError, Card.suit must be one of [clubs, hearts, diamonds, spades]
+  # => EnumeratedTypeError, Card.suit must be one of clubs, hearts, diamonds, spades.
   def attr_enum(name, types)
     attr_reader name
     
