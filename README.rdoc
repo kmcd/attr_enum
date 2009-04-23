@@ -12,7 +12,7 @@ A class macro to define an enumeration variable. See http://en.wikipedia.org/wik
    c.suit = 'clubs'
    c.suit
    => 'clubs'
-   m.suit = 'jack' 
+   c.suit = 'jack' 
    => EnumeratedTypeError, Card#suit must be one of clubs, hearts, diamonds, spades.
    
 == Installation
