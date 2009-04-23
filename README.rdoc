@@ -2,14 +2,6 @@
 
 A class macro to define an enumeration variable. See http://en.wikipedia.org/wiki/Enumerated_type for more information.
 
-== Installation
-
-From rubyforge:
-  gem install attr_enum
-  
-From github:
-   gem install kmcd-attr_enum --source http://gems.github.com
-  
 == Usage
 
    class Card
@@ -22,3 +14,11 @@ From github:
    => 'clubs'
    m.suit = 'jack' 
    => EnumeratedTypeError, Card#suit must be one of clubs, hearts, diamonds, spades.
+   
+== Installation
+
+From rubyforge:
+  gem install attr_enum
+  
+From github:
+  gem install kmcd-attr_enum --source http://gems.github.com
