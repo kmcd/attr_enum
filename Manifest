@@ -1,0 +1,6 @@
+Rakefile
+metaid.rb
+lib/attr_enum.rb
+README.rdoc
+test/attr_enum_test.rb
+Manifest
