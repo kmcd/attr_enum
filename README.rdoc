@@ -8,7 +8,7 @@ From rubyforge:
   gem install attr_enum
   
 From github:
-   gem install attr_enum
+   gem install kmcd-attr_enum --source http://gems.github.com
   
 == Usage
 
