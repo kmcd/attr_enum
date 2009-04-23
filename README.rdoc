@@ -1,10 +1,14 @@
 = attr_enum
 
-A class macro to define an enumeration variable. See http://en.wikipedia.org/wiki/Enumerated_type for more info
+A class macro to define an enumeration variable. See http://en.wikipedia.org/wiki/Enumerated_type for more information.
 
 == Installation
 
+From rubyforge:
   gem install attr_enum
+  
+From github:
+   gem install attr_enum
   
 == Usage
 
@@ -17,4 +21,4 @@ A class macro to define an enumeration variable. See http://en.wikipedia.org/wik
    c.suit
    => 'clubs'
    m.suit = 'jack' 
-   => EnumeratedTypeError, Card.suit must be one of clubs, hearts, diamonds, spades.
+   => EnumeratedTypeError, Card#suit must be one of clubs, hearts, diamonds, spades.
