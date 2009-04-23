@@ -1,9 +1,11 @@
 class Module
   # A macro to define an enumeration variable
+  # See http://en.wikipedia.org/wiki/Enumerated_type for more info
   # 
   # class Card
   #   attr_enum :suit, %w( clubs hearts diamonds spades )
   # end
+  # 
   # c = Card.new
   # c.suit = 'clubs'
   # c.suit

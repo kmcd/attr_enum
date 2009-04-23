@@ -1,0 +1,20 @@
+= attr_enum
+
+A class macro to define an enumeration variable. See http://en.wikipedia.org/wiki/Enumerated_type for more info
+
+== Installation
+
+  gem install attr_enum
+  
+== Usage
+
+   class Card
+     attr_enum :suit, %w( clubs hearts diamonds spades )
+   end
+   
+   c = Card.new
+   c.suit = 'clubs'
+   c.suit
+   => 'clubs'
+   m.suit = 'jack' 
+   => EnumeratedTypeError, Card.suit must be one of clubs, hearts, diamonds, spades.
